@@ -9,7 +9,6 @@ const navList = [
 ];
 
 export default function linkReducer(state = navList, action) {
-  console.log(action, state);
   switch (action.type) {
     case CHANGE_LINK:
       let result = [];
