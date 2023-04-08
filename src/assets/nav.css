@@ -1,0 +1,173 @@
+:root {
+    --primary-color: #BB86FC;
+    --secondary-color: #03DAC5;
+    --success: #4BB543;
+    --error: #ED4337;
+    --warning: #FFCC00;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --body-background-color: #1F1B24;
+        --element-background-color: #1f1b24f0;
+        --font-color: #ffffff;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --body-background-color: #ffffff;
+        --font-color: #000000;
+    }
+}
+
+.navigation-bar {
+    width: 100%;
+    height: 40px;
+    min-width: 100vw;
+    background-color: transparent;
+    /* border: 1px solid white; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+}
+
+.navigation-bar.sticky {
+    position: fixed;
+    top: 0;
+}
+
+.brand {
+    font-size: 24px;
+    font-weight: bold;
+    padding: 5px 12px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.menu-toggler {
+    width: 30px;
+    height: 25px;
+    margin: 5px 12px;
+    display: block;
+    z-index: 1000;
+}
+
+@media (min-width: 900px) {
+    .menu-toggler {
+        display: none;
+    }
+}
+
+.menu-toggler span {
+    width: 30px;
+    height: 5px;
+    background: var(--font-color);
+    display: block;
+    margin: 5px 0;
+}
+
+.menu-toggler span:nth-child(1) {
+    margin-top: 0px;
+}
+
+.menu-toggler span:nth-child(2) {
+    opacity: 1;
+}
+
+.menu-toggler span:nth-child(3) {
+    margin-bottom: 0px;
+}
+
+.menu-toggler.active span:nth-child(1) {
+    transform: rotate(45deg) translate(4px, 10px);
+}
+
+.menu-toggler.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggler.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(4px, -10px);
+}
+
+.menu {
+    position: absolute;
+    background-color: #888888;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    transform: translateX(100%)
+}
+
+.menu.active {
+    transform: translateX(0);
+}
+
+.menu ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin-top: 50vh;
+    transform: translateY(-50%);
+}
+
+.menu a {
+    width: 150px;
+}
+
+.menu li {
+    height: 36px;
+    width: 100%;
+    display: flex;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    align-items: center;
+    justify-content: center;
+    margin: 12px 0;
+    padding: 5px 12px;
+    cursor: pointer;
+}
+
+.menu li:hover {
+    background-color: var(--font-color);
+}
+
+.menu li:hover {
+    color: var(--body-background-color);
+}
+
+.menu .active-link {
+    background-color: var(--font-color);
+    color: var(--body-background-color);
+}
+
+@media (min-width: 900px) {
+    .menu {
+        position: relative;
+        background-color: transparent;
+        height: 40px;
+        width: auto;
+        transform: translateX(0);
+    }
+
+    .menu ul {
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        margin: 0px;
+        transform: translateY(0);
+    }
+
+    .menu li {
+        font-size: 14px;
+        margin: 0px;
+        padding: 5px 12px;
+    }
+}
