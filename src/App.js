@@ -5,13 +5,13 @@ import { Provider } from "react-redux";
 import link from "./store";
 
 // react-router-dom
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import HireMe from "./templates/hireMe";
 
 function App() {
   return (
     <div>
-      <BrowserRouter>
+      <HashRouter>
         <Routes>
           <Route
             path="/"
@@ -28,7 +28,7 @@ function App() {
             <Route path="experience" element={<></>} />
           </Route>
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
       <HireMe />
     </div>
   );

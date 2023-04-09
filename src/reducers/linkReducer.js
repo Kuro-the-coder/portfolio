@@ -1,11 +1,17 @@
 import { CHANGE_LINK } from "../actionTypes/actionTypes";
 
+let location = window.location.href.split("/");
+location = location[location.length - 1];
 const navList = [
-  { name: "home", target: "/", active: true },
-  { name: "about", target: "/about", active: false },
-  { name: "interest", target: "/interest", active: false },
-  { name: "contact", target: "/contact", active: false },
-  { name: "experience", target: "/experience", active: false },
+  { name: "home", target: "/", active: location === "" },
+  { name: "about", target: "/about", active: location === "about" },
+  { name: "interest", target: "/interest", active: location === "interest" },
+  { name: "contact", target: "/contact", active: location === "contact" },
+  {
+    name: "experience",
+    target: "/experience",
+    active: location === "experience",
+  },
 ];
 
 export default function linkReducer(state = navList, action) {
