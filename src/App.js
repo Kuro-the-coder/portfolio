@@ -9,12 +9,13 @@ import "./assets/notfound.css";
 // libraries
 import Nav from "./templates/nav";
 import { Provider } from "react-redux";
-import { link, search } from "./store";
+import { link } from "./store";
 
 // react-router-dom
 import { Routes, Route } from "react-router-dom";
 import HireMe from "./templates/hireMe";
 import Loading from "./templates/loading";
+import Contact from "./pages/contact";
 
 // components
 const Home = React.lazy(() => wait(1500).then(() => import("./pages/home")));
@@ -31,16 +32,16 @@ function wait(time) {
 function App() {
   return (
     <div>
+      <Provider store={link}>
+        <Nav />
+      </Provider>
       <React.Suspense fallback={<Loading />}>
-        <Provider store={link}>
-          <Nav />
-        </Provider>
         <div className="main-content" id="main-content">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="about" element={<Home />} />
             <Route path="interest" element={<></>} />
-            <Route path="contact" element={<></>} />
+            <Route path="contact" element={<Contact />} />
             <Route path="experience" element={<></>} />
             <Route
               path="*"
