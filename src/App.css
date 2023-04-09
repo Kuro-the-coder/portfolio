@@ -57,7 +57,7 @@ p {
 
 .hire-me {
     position: absolute;
-    width: 40px;
+    width: 100px;
     height: 40px;
     bottom: 30px;
     right: 30px;
@@ -82,18 +82,32 @@ p {
 
 .hire-me p {
     position: absolute;
-    opacity: 0;
-}
-
-.hire-me:hover p {
     opacity: 1;
 }
 
 .hire-me svg {
     position: absolute;
-    opacity: 1;
+    opacity: 0;
 }
 
-.hire-me:hover svg {
-    opacity: 0;
+@media (min-width: 900px) {
+    .hire-me {
+        width: 40px;
+    }
+
+    .hire-me p {
+        opacity: 0;
+    }
+
+    .hire-me:hover p {
+        opacity: 1;
+    }
+
+    .hire-me svg {
+        opacity: 1;
+    }
+
+    .hire-me:hover svg {
+        opacity: 0;
+    }
 }
