@@ -6,6 +6,8 @@ import link from "./store";
 
 // react-router-dom
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+// components
 import HireMe from "./templates/hireMe";
 
 function App() {

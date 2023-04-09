@@ -57,7 +57,7 @@ p {
 
 .hire-me {
     position: absolute;
-    width: 100px;
+    width: 40px;
     height: 40px;
     bottom: 30px;
     right: 30px;
@@ -76,5 +76,24 @@ p {
 
 .hire-me:hover {
     background-color: var(--secondary-color);
-    color: var(--body-background-color)
+    color: var(--body-background-color);
+    width: 100px;
+}
+
+.hire-me p {
+    position: absolute;
+    opacity: 0;
+}
+
+.hire-me:hover p {
+    opacity: 1;
+}
+
+.hire-me svg {
+    position: absolute;
+    opacity: 1;
+}
+
+.hire-me:hover svg {
+    opacity: 0;
 }
