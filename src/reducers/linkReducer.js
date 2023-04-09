@@ -1,4 +1,4 @@
-import { CHANGE_LINK } from "../actionTypes/actionTypes";
+import { CHANGE_LINK, SEARCH } from "../actionTypes/actionTypes";
 
 let location = window.location.href.split("/");
 location = location[location.length - 1];
@@ -13,17 +13,32 @@ const navList = [
     active: location === "experience",
   },
 ];
+let result = [];
 
 export default function linkReducer(state = navList, action) {
   switch (action.type) {
     case CHANGE_LINK:
-      let result = [];
+      result = [];
       for (let i = 0; i < action.list.length; i++) {
         action.target === i
           ? result.push({ ...action.list[i], active: true })
           : action.list[i].active
           ? result.push({ ...action.list[i], active: false })
           : result.push({ ...action.list[i] });
+      }
+      return result;
+    case SEARCH:
+      result = [];
+      if (action.target === null) {
+        return navList;
+      }
+      for (let i = 0; i < navList.length; i++) {
+        if (
+          navList[i].name.includes(action.target) ||
+          navList[i].target.includes(action.target)
+        ) {
+          result.push(navList[i]);
+        }
       }
       return result;
     default:

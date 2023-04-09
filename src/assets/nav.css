@@ -1,25 +1,4 @@
-:root {
-    --primary-color: #BB86FC;
-    --secondary-color: #03DAC5;
-    --success: #4BB543;
-    --error: #ED4337;
-    --warning: #FFCC00;
-}
-
-@media (prefers-color-scheme: dark) {
-    :root {
-        --body-background-color: #1F1B24;
-        --element-background-color: #1f1b24f0;
-        --font-color: #ffffff;
-    }
-}
-
-@media (prefers-color-scheme: light) {
-    :root {
-        --body-background-color: #ffffff;
-        --font-color: #000000;
-    }
-}
+@import "../index.css";
 
 .navigation-bar {
     width: 100%;
@@ -34,9 +13,8 @@
     top: 0;
 }
 
-.navigation-bar.sticky {
-    position: fixed;
-    top: 0;
+.navigation-bar.bg-nav {
+    background-color: var(--body-background-color)
 }
 
 .brand {
@@ -47,11 +25,16 @@
     cursor: pointer;
 }
 
+.brand:hover {
+    color: var(--secondary-color)
+}
+
 .menu-toggler {
     width: 30px;
     height: 25px;
     margin: 5px 12px;
     display: block;
+    cursor: pointer;
     z-index: 1000;
 }
 
@@ -118,10 +101,13 @@
 
 .menu a {
     width: 150px;
+    height: 40px;
+    margin: 12px 0;
+    padding: 0;
 }
 
 .menu li {
-    height: 36px;
+    height: 100%;
     width: 100%;
     display: flex;
     font-size: 16px;
@@ -130,22 +116,23 @@
     letter-spacing: 3px;
     align-items: center;
     justify-content: center;
-    margin: 12px 0;
     padding: 5px 12px;
     cursor: pointer;
 }
 
 .menu li:hover {
-    background-color: var(--font-color);
-}
-
-.menu li:hover {
+    background-color: var(--primary-color);
     color: var(--body-background-color);
 }
 
 .menu .active-link {
     background-color: var(--font-color);
     color: var(--body-background-color);
+}
+
+.menu .active-link:hover {
+    background-color: var(--primary-color);
+    color: var(--font-color);
 }
 
 @media (min-width: 900px) {
