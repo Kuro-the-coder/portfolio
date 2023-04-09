@@ -1,0 +1,167 @@
+@import "../index.css";
+
+.not-found {
+    width: 100vw;
+    height: calc(100vh + 40px);
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--body-background-color);
+    top: -40px;
+    z-index: 10000;
+}
+
+.not-found .inner {
+    height: fit-content;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 900px) {
+    .not-found .inner {
+        flex-direction: row;
+    }
+}
+
+.not-found .info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-self: center;
+    margin: 12px 20px;
+}
+
+.not-found h2 {
+    font-size: 84px;
+    margin: 0;
+}
+
+.not-found p {
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+.not-found .inner .info *:last-child {
+    margin-bottom: 12px;
+}
+
+.not-found .vertical-line {
+    width: 3px;
+    height: 100%;
+    min-height: 200px;
+    display: none;
+    background-color: var(--font-color);
+}
+
+@media (min-width: 900px) {
+    .not-found .vertical-line {
+        display: block;
+    }
+}
+
+.inputbox {
+    position: relative;
+    width: 250px;
+}
+
+.inputbox input {
+    position: relative;
+    width: 100%;
+    padding: 20px 10px 10px;
+    background: transparent;
+    outline: none;
+    box-shadow: none;
+    border: none;
+    color: #23242a;
+    font-size: 1em;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+    z-index: 10;
+}
+
+.inputbox span {
+    position: absolute;
+    left: 0;
+    padding: 20px 10px 10px;
+    font-size: 1em;
+    color: #8f8f8f;
+    letter-spacing: 00.05em;
+    transition: 0.5s;
+    pointer-events: none;
+}
+
+.inputbox input:valid~span,
+.inputbox input:focus~span {
+    color: var(--secondary-color);
+    transform: translateX(-10px) translateY(-38px);
+    font-size: 0, 75em;
+}
+
+.inputbox i {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--secondary-color);
+    border-radius: 4px;
+    transition: 0.5s;
+    pointer-events: none;
+    z-index: 9;
+}
+
+.inputbox input:valid~i,
+.inputbox input:focus~i {
+    height: 44px;
+}
+
+.search_404 {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    margin: 12px 20px;
+}
+
+.search_404 .inputbox {
+    margin-bottom: 12px;
+}
+
+.avaliable-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.avaliable-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 3px 5px;
+    text-transform: uppercase;
+    width: 150px;
+    height: 40px;
+    padding: 5px 12px;
+    background-color: var(--font-color);
+    border-radius: 5px;
+}
+
+@media (min-width: 900px) {
+    .avaliable-links {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .avaliable-links a {
+        width: fit-content;
+    }
+}
+
+
+.not-found code {
+    text-transform: uppercase;
+}
