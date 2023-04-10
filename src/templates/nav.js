@@ -2,17 +2,43 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { changeLink } from "../actions/action";
 import { Link } from "react-router-dom";
+import HireMe from "./hireMe";
 
 export default function Nav() {
   const navList = useSelector((state) => state);
-  console.log(navList);
+  const [scrollable, setScrollable] = React.useState(true);
   const dispatch = useDispatch();
 
   function menuToggle() {
     let menu = document.getElementById("menu");
     let toggler = document.getElementById("menu-toggler");
+    let hireMe = document.getElementById("hire-me");
     menu.classList.toggle("active");
     toggler.classList.toggle("active");
+    hireMe.classList.toggle("active");
+    scrollable ? disableScroll() : enableScroll();
+    let main_content = document.getElementById("main-content");
+    if (main_content.style.opacity === "0") {
+      main_content.style.opacity = 1;
+      main_content.style.display = "block";
+    } else {
+      main_content.style.opacity = 0;
+      main_content.style.display = "none";
+    }
+  }
+
+  function disableScroll() {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    let scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+    window.onscroll = function () {
+      window.scrollTo(scrollLeft, scrollTop);
+    };
+    setScrollable(false);
+  }
+
+  function enableScroll() {
+    window.onscroll = function () {};
+    setScrollable(true);
   }
 
   React.useEffect(() => {
@@ -48,6 +74,7 @@ export default function Nav() {
           ))}
         </ul>
       </div>
+      <HireMe />
     </nav>
   );
 }

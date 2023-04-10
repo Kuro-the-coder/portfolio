@@ -14,6 +14,7 @@
 body {
     width: auto;
     min-width: 100vw;
+    max-width: 100vw;
     height: auto;
     min-height: 100vh;
     background-color: var(--body-background-color);
@@ -34,14 +35,18 @@ p {
     margin: 0;
 }
 
-.hire-me {
+.hire-me-container {
     position: fixed;
-    width: 100px;
-    height: 40px;
     bottom: 30px;
     right: 30px;
+    z-index: 1000;
+}
+
+.hire-me {
+    width: 100px;
+    height: 40px;
     padding: 5px 12px;
-    border-radius: 25px;
+    border-radius: 20px;
     background-color: var(--primary-color);
     text-align: center;
     text-transform: capitalize;
@@ -51,6 +56,12 @@ p {
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    transform: translateX(500%);
+    /* z-index: 1000; */
+}
+
+.hire-me.active {
+    transform: translateX(0);
 }
 
 .hire-me:hover {
@@ -69,9 +80,19 @@ p {
     opacity: 0;
 }
 
+.main-content {
+    height: auto;
+    min-height: calc(100vh - 40px);
+    margin-top: 40px;
+    margin-bottom: 40px;
+    position: relative;
+    overflow-x: hidden;
+}
+
 @media (min-width: 900px) {
     .hire-me {
         width: 40px;
+        transform: translateX(0);
     }
 
     .hire-me p {
@@ -89,10 +110,9 @@ p {
     .hire-me:hover svg {
         opacity: 0;
     }
-}
 
-.main-content {
-    height: auto;
-    min-height: calc(100vh - 40px);
-    margin-top: 40px;
+    .main-content {
+        display: block !important;
+        opacity: 1 !important;
+    }
 }

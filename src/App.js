@@ -5,6 +5,8 @@ import "./App.css";
 import "./assets/nav.css";
 import "./assets/loading.css";
 import "./assets/notfound.css";
+import "./assets/contact.css";
+import "./assets/checkbox.css";
 
 // libraries
 import Nav from "./templates/nav";
@@ -15,12 +17,14 @@ import { link } from "./store";
 import { Routes, Route } from "react-router-dom";
 import HireMe from "./templates/hireMe";
 import Loading from "./templates/loading";
-import Contact from "./pages/contact";
 
 // components
 const Home = React.lazy(() => wait(1500).then(() => import("./pages/home")));
 const NotFound = React.lazy(() =>
   wait(1500).then(() => import("./pages/notFound"))
+);
+const Contact = React.lazy(() =>
+  wait(1500).then(() => import("./pages/contact"))
 );
 
 function wait(time) {
@@ -38,11 +42,13 @@ function App() {
       <React.Suspense fallback={<Loading />}>
         <div className="main-content" id="main-content">
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="about" element={<Home />} />
-            <Route path="interest" element={<></>} />
-            <Route path="contact" element={<Contact />} />
-            <Route path="experience" element={<></>} />
+            <Route path="/portfolio">
+              <Route index element={<Home />} />
+              <Route path="about" element={<Home />} />
+              <Route path="interest" element={<></>} />
+              <Route path="contact" element={<Contact />} />
+              <Route path="experience" element={<></>} />
+            </Route>
             <Route
               path="*"
               element={
@@ -52,7 +58,7 @@ function App() {
               }
             />
           </Routes>
-          <HireMe />
+          {/* <HireMe /> */}
         </div>
       </React.Suspense>
     </div>

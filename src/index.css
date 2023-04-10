@@ -28,6 +28,7 @@ code {
   :root {
     --body-background-color: #1F1B24;
     --element-background-color: #1f1b2469;
+    --element-hover-background-color: #36313d;
     --font-color: #ffffff;
   }
 }
@@ -37,4 +38,8 @@ code {
     --background-color: #ffffff;
     --font-color: #000000;
   }
+}
+
+*::-webkit-scrollbar {
+  display: none;
 }

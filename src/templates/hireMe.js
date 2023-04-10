@@ -10,9 +10,11 @@ export default function HireMe() {
   //   });
   // }, []);
   return (
-    <div className="hire-me" id="hire-me">
-      <p>Hire Me</p>
-      <RiContactsFill />
+    <div className="hire-me-container">
+      <div className="hire-me" id="hire-me">
+        <p>Hire Me</p>
+        <RiContactsFill />
+      </div>
     </div>
   );
 }

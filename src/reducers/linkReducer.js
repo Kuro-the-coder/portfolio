@@ -3,13 +3,21 @@ import { CHANGE_LINK, SEARCH } from "../actionTypes/actionTypes";
 let location = window.location.href.split("/");
 location = location[location.length - 1];
 const navList = [
-  { name: "home", target: "/", active: location === "" },
-  { name: "about", target: "/about", active: location === "about" },
-  { name: "interest", target: "/interest", active: location === "interest" },
-  { name: "contact", target: "/contact", active: location === "contact" },
+  { name: "home", target: "/portfolio", active: location === "" },
+  { name: "about", target: "/portfolio/about", active: location === "about" },
+  {
+    name: "interest",
+    target: "/portfolio/interest",
+    active: location === "interest",
+  },
+  {
+    name: "contact",
+    target: "/portfolio/contact",
+    active: location === "contact",
+  },
   {
     name: "experience",
-    target: "/experience",
+    target: "/portfolio/experience",
     active: location === "experience",
   },
 ];
