@@ -15,7 +15,6 @@ import { link } from "./store";
 
 // react-router-dom
 import { Routes, Route } from "react-router-dom";
-import HireMe from "./templates/hireMe";
 import Loading from "./templates/loading";
 
 // components

@@ -1,9 +1,13 @@
 import { CHANGE_LINK, SEARCH } from "../actionTypes/actionTypes";
 
 let location = window.location.href.split("/");
-location = location[location.length - 1];
+location =
+  location[location.length - 1].split("#")[
+    location[location.length - 1].split("#").length - 1
+  ];
+console.log(location);
 const navList = [
-  { name: "home", target: "/portfolio", active: location === "" },
+  { name: "home", target: "/portfolio", active: location === "portfolio" },
   { name: "about", target: "/portfolio/about", active: location === "about" },
   {
     name: "interest",

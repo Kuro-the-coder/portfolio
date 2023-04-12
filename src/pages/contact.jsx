@@ -1,11 +1,13 @@
 import React from "react";
 
-// import { GrFacebook, GrInstagram } from "react-icons/gr";
 // icons
 import { HiOutlineChatBubbleLeftRight } from "react-icons/hi2";
 import { MdOutlineLocationOn } from "react-icons/md";
 import { CgPhone } from "react-icons/cg";
 import { BiSend } from "react-icons/bi";
+import { FaInstagram, FaFacebookF, FaGithub } from "react-icons/fa";
+
+// components
 import CheckBox from "../templates/checkbox";
 
 export default function Contact() {
@@ -55,6 +57,17 @@ export default function Contact() {
             </div>
           </div>
         ))}
+        <div className="contact-list-icons">
+          <div className="icon">
+            <FaFacebookF size="30" />
+          </div>
+          <div className="icon">
+            <FaInstagram size="30" />
+          </div>
+          <div className="icon">
+            <FaGithub size="30" />
+          </div>
+        </div>
       </div>
       <div className="submit-form">
         <div className="header">
@@ -76,7 +89,7 @@ export default function Contact() {
           </div>
           <div className="inputbox text-area">
             <input type="text" required />
-            <span>Tell me a little about the project</span>
+            <span>Tell me a little about the project...</span>
             <i></i>
           </div>
           <div className="checklist-container">

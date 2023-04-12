@@ -52,7 +52,9 @@ export default function Nav() {
 
   return (
     <nav className="navigation-bar" id="nav-bar">
-      <div className="brand" id="brand"></div>
+      <div className="brand" id="brand">
+        Symbiote
+      </div>
       <div className="menu-toggler" id="menu-toggler" onClick={menuToggle}>
         <span></span>
         <span></span>
