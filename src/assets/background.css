@@ -1,0 +1,31 @@
+@import "../index.css";
+
+.background {
+    position: fixed;
+    top: 40px;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+    z-index: -1;
+}
+
+.background svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 112px;
+}
+
+.background .shape-fill {
+    fill: var(--primary-color);
+}
+
+/** For mobile devices **/
+@media (max-width: 767px) {
+    .background svg {
+        width: calc(219% + 1.3px);
+        height: 154px;
+    }
+}

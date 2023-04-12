@@ -2,11 +2,13 @@ import React from "react";
 
 // css
 import "./App.css";
+import "./assets/home.css";
 import "./assets/nav.css";
 import "./assets/loading.css";
 import "./assets/notfound.css";
 import "./assets/contact.css";
 import "./assets/checkbox.css";
+import "./assets/background.css";
 
 // libraries
 import Nav from "./templates/nav";
@@ -16,6 +18,7 @@ import { link } from "./store";
 // react-router-dom
 import { Routes, Route } from "react-router-dom";
 import Loading from "./templates/loading";
+import Background from "./templates/background";
 
 // components
 const Home = React.lazy(() => wait(1500).then(() => import("./pages/home")));
@@ -40,6 +43,7 @@ function App() {
       </Provider>
       <React.Suspense fallback={<Loading />}>
         <div className="main-content" id="main-content">
+          <Background />
           <Routes>
             <Route path="/portfolio">
               <Route index element={<Home />} />

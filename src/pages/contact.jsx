@@ -58,6 +58,7 @@ export default function Contact() {
           </div>
         ))}
         <div className="contact-list-icons">
+          Find me here -
           <div className="icon">
             <FaFacebookF size="30" />
           </div>

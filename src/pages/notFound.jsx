@@ -17,7 +17,7 @@ export default function NotFound() {
         <div className="info" id="info">
           <h2>404</h2>
           <p>Page not found.</p>
-          <Link to="/">
+          <Link to="/portfolio">
             Go to <code>home</code> page.
           </Link>
         </div>

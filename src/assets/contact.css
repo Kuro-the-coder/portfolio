@@ -20,8 +20,9 @@
 }
 
 .submit-form {
-    background-color: var(--element-hover-background-color);
+    background-color: var(--element-background-color);
     border-radius: 10px;
+    color: invert(100%);
 }
 
 @media (min-width: 900px) {
@@ -51,6 +52,8 @@
 
 .contact-list-icons {
     justify-content: flex-end;
+    align-items: center;
+    font-size: 14px;
     cursor: default;
 }
 
@@ -129,7 +132,6 @@
 }
 
 .inputbox.text-area input {
-    /* position: relative; */
     width: 100%;
     padding: 20px 10px 10px;
     background: transparent;

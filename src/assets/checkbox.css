@@ -71,11 +71,11 @@
 }
 
 .check:hover svg {
-    stroke: var(--primary-color, #a3e583);
+    stroke: var(--secondary-color, #a3e583);
 }
 
 .checkbox:checked+.check svg {
-    stroke: var(--primary-color, #a3e583);
+    stroke: var(--secondary-color, #a3e583);
 }
 
 .checkbox:checked+.check svg path {
